@@ -1,0 +1,56 @@
+<div class="top">
+  <p>池田　月・水・金曜日</p>
+</div>
+
+<!-- ここから追加 -->
+<!-- <input id="address" type="textbox" value="GeekSalon">
+<input type="button" value="Encode" onclick="codeAddress()"> -->
+<!-- ここまで追加-->
+
+<div id='map'></div>
+
+<style>
+#map {
+  height: 550px;
+  width: 1360px;
+}
+</style>
+
+<script>
+let map
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 34.7631, lng:134.7905},
+    zoom: 18,
+  });
+
+  34.76311267543551, 134.79053599631376
+
+  marker = new google.maps.Marker({
+    position:  {lat: 34.7631, lng:134.79055},
+    map: map
+  });
+}
+// ここから追加 
+let geocoder
+
+function codeAddress(){
+  let inputAddress = document.getElementById('address').value;
+
+  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    if (status == 'OK') {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('該当する結果がありませんでした：' + status);
+    }
+  });   
+}
+// ここまで追加 
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK3QjmP_llYxYQ65yYDDGfee49smfMPz8&callback=initMap" async defer></script>

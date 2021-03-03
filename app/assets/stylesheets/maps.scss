@@ -1,0 +1,28 @@
+.top {
+  padding-left: 130px;
+  padding-top: 7px;
+  margin-bottom: 6px;
+  font-size: 30px;
+  font-weight: nomal;
+  font-family: "HGP行書体";
+}
+
+.map-place {
+  background-color: rgba($color: #f5f2e4ab, $alpha: 1.0);
+  height: 650px;
+}
+
+.map-place a{
+  font-family: "HGP行書体";
+  font-size: 60px;
+  text-align: center;
+  display: block;
+}
+
+.map-place-arai {
+  padding-top: 150px;
+}
+
+.map-place-ikeda {
+  padding-top: 70px;
+}
